@@ -1,0 +1,55 @@
+<!--inlclude header-->
+<div ng-include=" '/views/includes/header.html' "></div>
+
+
+    <style>
+        h3{margin:0;}
+        #ticketInfo,#ticketReply{color:gray;text-decoration: none;font-size:12px;margin:10px 0;}
+        #ticketContent pre{padding:40px;}
+        #ticketReply ul{
+            list-style:none;padding:0px;
+        }
+        #ticketReply{
+
+        }
+        #ticketCommit textarea{
+            resize: none;width:100%
+        }
+        #ticketCommit :after{
+            content:'';
+            clear:both;
+        }
+    </style>
+
+<div class="container">
+    <h2>{{ ticket.title }}</h2>
+    <div id="ticketInfo">
+        <a>{{ ticket.objectId }} / </a>
+        <span>{{ ticket.type }} / </span>
+        <span> {{ ticket.state }} </span>
+        <br/>
+        <span><a href=""> {{ ticket.user }} /</a></span>
+        <span> {{ ticket.createdAt }} </span>
+    </div>
+    <div id="ticketContent">
+        <pre>{{ ticket.content }}</pre>
+    </div>
+    <div id="ticketReply">
+        <ul>
+            <li ng-repeat="reply in ticket.replys" style="margin-top: 20px;margin-bottom: 20px">
+                <div>
+                    <span><a href=""> {{ reply.user }} </a></span>
+                    <span> / {{ reply.time }} </span>
+                </div>
+
+                <pre>{{ reply.content }}</pre>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <form id="ticketCommit" method="post">
+            <textarea name="content" id="content" rows="5" placeholder="回复内容" ng-model="newReply.content"></textarea>
+            <button class="btn btn-primary btn-lg " style="float: right" ng-click="addReply()"> 回复 </button>
+        </form>
+    </div>
+</div>

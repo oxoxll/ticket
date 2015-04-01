@@ -1,0 +1,83 @@
+<!--inlclude header-->
+<div ng-include=" '/views/includes/header.html' "></div>
+
+
+<style>
+    *{margin:0;padding:0}
+    .feedBackDiv{
+        border:1px solid gray;
+        border-radius: 10px;
+        margin:50px auto;
+        width:500px;
+        font-size:12px;
+        padding:20px;
+    }
+    .feedBackTable{
+        list-style:none;
+    }
+    .feedBackTable tr{
+     height:50px;
+    }
+    .feedBackDiv input[type="text"]{
+        height:25px;
+        border-radius: 5px;
+    }
+</style>
+
+<div class="feedBackDiv">
+    <form class="feedBackInfo">
+        <h2>反馈问题：</h2>
+        <table class="feedBackTable">
+            <tr>
+                <td width="50px"><label for="topic">标题:</label></td>
+                <td><input class="form-control" type="text" id="topic" placeholder="请输入标题" ng-model="ticket.title"/>
+                </td>
+            </tr>
+            <tr>
+                <td><b>类型:</b></td>
+                <td>
+                    <label for="target1">意见建议</label>
+                    <input type="radio" id="target1" name="target" style="margin-right:30px;" value="意见建议" ng-model="ticket.type"/>
+                    <label for="target2">Bug提交</label>
+                    <input type="radio" id="target2" name="target" value="BUG提交" ng-model="ticket.type"/>
+                </td>
+            </tr>
+            <tr>
+                <td style="position: relative"><label style="position:absolute;top:10px;" for="target1">详情描述</label></td>
+                <td>
+                    <textarea class="form-control textarea"  name="content" minlength="5" maxlength="200" placeholder="请输入您的反馈内容"
+                              rows="10" cols="50" style="resize:none" ng-model="ticket.content"></textarea>
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <div class="form-group col-md-offset-1">
+            <button type="button" class="btn btn-success btn-lg" ng-click="newTicket()"> 确定 </button>
+            <button type="button" class="btn btn-default btn-lg" ui-sref="tickets"> 取消 </button>
+        </div>
+    </form>
+</div>
+
+
+
+<form>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputFile">File input</label>
+        <input type="file" id="exampleInputFile">
+        <p class="help-block">Example block-level help text here.</p>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox"> Check me out
+        </label>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>

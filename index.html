@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ticketApp">
+<head>
+    <title>Ticket</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+
+    <script src="bower_components/angular/angular.js"></script>
+
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/config.js"></script>
+    <script src="app/service.js"></script>
+    <script src="app/router.js"></script>
+    <script src="app/controllers.js"></script>
+    <script src="app/interceptor.js"></script>
+
+</head>
+<body>
+    <div>
+        <div data-ui-view="data-ui-view" class="container"></div>
+        <div id="alertBox" data-ng-show="error" class="alert alert-danger">
+            <button type="button" data-ng-click="error = null;" class="close">&times;</button>
+            <strong>Error:</strong>
+            <span data-ng-bind="error.code"></span>
+            <span data-ng-bind="error.error"></span>
+        </div>
+    </div>
+    <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ========== -->
+    <div ui-view></div>
+</body>
+</html>
