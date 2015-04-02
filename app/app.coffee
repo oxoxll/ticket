@@ -20,5 +20,8 @@ angular.module "ticketApp", [
       if toState.module is 'private' and !Auth.isLoggedIn()
         e.preventDefault();
         $state.go 'login'
+
+
+      $rootScope.currentUser = Auth.getUser()
     )
 ]

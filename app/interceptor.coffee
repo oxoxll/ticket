@@ -15,7 +15,7 @@ angular.module "ticketApp"
 #        Leancloud app Id & Key
         request.headers["X-AVOSCloud-Application-Id"] = Config.Leancloud.Id
         request.headers["X-AVOSCloud-Application-Key"] = Config.Leancloud.Key
-#        request.headers.Authorization = Auth.getToken()
+        request.headers.Authorization = Auth.getToken()
       request
 
     response: (response) ->

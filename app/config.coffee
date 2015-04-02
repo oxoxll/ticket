@@ -2,8 +2,8 @@ angular.module "ticketApp"
 
 .constant 'Config',
   api:
-    user: "https://leancloud.cn/1.1/user"
     object: "https://leancloud.cn/1.1/classes"
+#    object: "http://172.29.10.179:5002/api"
   host: "http://localhost"
 
   Leancloud:

@@ -12,9 +12,12 @@ angular.module "ticketApp"
     $state
   ) ->
     $scope.login = ->
-      Auth.setToken 'thisIsAToken'
-      Auth.setUser $scope.user
-      $state.go('tickets')
+      unless $scope.user
+        alert '请输入用户名！'
+      else
+        Auth.setToken 'thisIsAToken'
+        Auth.setUser $scope.user
+        $state.go('tickets')
 
 ]
 .controller "LogoutCtrl", [

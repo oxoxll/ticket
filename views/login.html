@@ -3,22 +3,23 @@
 
 
 
-<!--<style>-->
-   <!--body{-->
-       <!--background: #eee;-->
-   <!--}-->
-    <!--.form-signin{-->
-        <!--max-width: 330px;-->
-        <!--padding: 15px;-->
-        <!--margin:80px auto;-->
-    <!--}-->
-    <!--.form-signin input{margin-top:10px;margin-bottom:10px;}-->
-<!--</style>-->
+<style>
+   body{
+       background: #eee;
+   }
+    .form-signin{
+        max-width: 330px;
+        padding: 15px;
+        margin:80px auto;
+    }
+    .form-signin input{margin-top:10px;margin-bottom:10px;}
+</style>
 
 <div class="container">
+    <h2 class="form-signin-heading">工单系统<small>    免注册试用中</small></h2>
+    <p>工单系统是您与我们最直接有效的交流平台，您可以通过工单系统来咨询任何问题，我们会第一时间为您解决。同时我们也欢迎您提交建议与意见。</p>
     <form class="form-signin">
-        <h2 class="form-signin-heading">登录试用</h2>
-        <p>工单系统是您与我们最直接有效的交流平台，您可以通过工单系统来咨询任何问题，我们会第一时间为您解决。同时我们也欢迎您提交建议与意见。</p>
+
         <input type="text" id="username" class="form-control" placeholder="请输入用户名" required="required" ng-model="user">
         <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="login()">点击进入</button>
     </form>
